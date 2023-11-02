@@ -1,5 +1,6 @@
 'use client'
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google'
 import './globals.scss'
 import { Provider } from 'react-redux';
@@ -20,7 +21,9 @@ export default function RootLayout({
       <body  className={inter.className} >
       <Provider  store={store}>
         <Header />
+
         {children}
+        <Analytics />
         </Provider>
         </body>
     </html>
